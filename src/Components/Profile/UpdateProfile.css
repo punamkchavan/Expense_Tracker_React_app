@@ -1,0 +1,84 @@
+.profile-page{
+  width: 900px;
+  margin: 40px auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* top bar */
+
+.top-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-progress{
+  background: #f3dede;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.profile-progress span{
+  color: blue;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* contact header */
+
+.contact-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cancel-btn{
+  border: 1px solid red;
+  color: red;
+  background: transparent;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* form layout */
+
+.contact-form{
+  margin-top: 25px;
+}
+
+.input-group{
+  display: flex;
+  gap: 40px;
+}
+
+/* field */
+
+.field{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.field label{
+  font-weight: bold;
+}
+
+.field input{
+  width: 250px;
+  padding: 6px;
+  border: 1px solid #aaa;
+}
+
+/* update button */
+
+.update-btn{
+  margin-top: 20px;
+  padding: 6px 14px;
+  background: #d69c9c;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
