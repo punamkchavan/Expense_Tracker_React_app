@@ -1,11 +1,14 @@
-import { useState, useRef} from 'react';
+import { useState, useRef, useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import './SignUpForm.css';
+import AuthContext from '../../Context/auth-context';
 
 const SignUpForm= ()=>{
 
     const navigate = useNavigate();
+
+    const authCtx= useContext(AuthContext)
 
     const emailInputRef = useRef();
     const passwordInputRef = useRef();
@@ -49,17 +52,10 @@ const SignUpForm= ()=>{
         returnSecureToken: true,
       })
       .then((response) => {
-
-        const token = response.data
-        localStorage.setItem("token", token);
-
-        if(isSignUp){
-          console.log("User has successfully signed up.");
-        }else{
-            navigate("/welcome");
-        }
-          
-      })
+      const token = response.data.idToken;
+      authCtx.login(token);   
+      navigate("/Welcome")
+     })
       .catch((error) => {
         const errorMessage =
           error.response?.data?.error?.message || "Authentication failed!";
