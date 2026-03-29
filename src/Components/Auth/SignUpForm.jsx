@@ -1,5 +1,5 @@
 import { useState, useRef, useContext} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from "axios";
 import './SignUpForm.css';
 import AuthContext from '../../Context/auth-context';
@@ -95,8 +95,11 @@ const SignUpForm= ()=>{
                     required/>
                     }
                 </div>
+                <div>
+               </div>
                 <div className='action'>
                     {!isLoding && <button type='submit'>{isSignUp ? 'Submit':'Login'}</button>}
+                    {!isSignUp && <Link to="/forgotpassword">Forgot Password</Link>}
                     {isLoding &&<p>Sending Request...</p>}
                     <button type='button' onClick={switchModeHandler}>
                     {isSignUp ? 'Already have account? Sign In' : "Don't have an account? Sign Up"}
